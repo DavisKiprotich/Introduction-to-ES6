@@ -1,0 +1,4 @@
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+// I used ...args to replace parameters inside a function.The reduce() callbacks arguments.

@@ -1,0 +1,10 @@
+//With ES6, you can remove the function keyword and colon altogether when defining functions in objects
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {         // This is where we removed function leaving behind (newGear)
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);

@@ -1,0 +1,22 @@
+/* You can obtain values from an object and set the value of a property within an object.
+Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. 
+These are classically called getters and setters. */
+
+class Thermostat {
+  constructor (temp){
+    this._temp = temp;
+  }
+  get temperature() {
+    return 5/9 * (this._temp - 32);
+  }
+  set temperature(desiredTemperature){
+    this._temp = desiredTemperature * 9.0 / 5 + 32;
+  }
+}
+//The getter is programmed to return a value in celsius so since the value was previously stored in fahrenheit, it has to convert the stored value to Celsius. The setter is programmed to accept a value in celsius, but store it in fahrenheit so it has to convert the value that was passed to fahrenheit.
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
